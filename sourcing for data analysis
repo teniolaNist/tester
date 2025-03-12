@@ -1,0 +1,27 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib
+
+#simple scatterplot code, can be converted to simple histogram code using histogram prefixes in matplotlib
+
+#using gridspace for more complicated plots instead of lines 17-21, try using the 2d histogram functions where color depth is shown through z axis, 
+
+df = pd.read_csv("filepathname") #use forward slash
+
+rand_var = df['element name'] <2000 #examples include average blockage pA, etc
+
+x = df.loc[rand_var]['element name'] #setting values for x axis, examples include area_pC
+
+y = df.loc[rand_var]['element name'] #setting values for y axis, examples include average blockage PA etc
+
+fig = plt.figure()
+
+ax = fig.add_subplot(111) 
+
+ax.scatter(x, y) #creating scatter plot using x and y identified above
+
+ax.set_xscale("log")  #making x axis logarithmically scaled
+
+fig.show()  #display figure on screen
+
